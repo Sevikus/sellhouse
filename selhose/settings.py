@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'contacts.apps.ContactsConfig',
+    'accounts.apps.AccountsConfig',
     'realtors.apps.RealtorsConfig',
     'listings.apps.ListingsConfig',
     'pages.apps.PagesConfig',
@@ -135,3 +137,20 @@ STATICFILES_DIRS = [
 # Media Folder Settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# Messages
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
+
+# Email config
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER='dragansevo.ds@gmail.com'
+# EMAIL_HOST_PASSWORD=''
+# EMAIL_USE_TLS=True
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = 'e1c8c3dd8df378'
+EMAIL_HOST_PASSWORD = 'de549f94f2c3ee'
+EMAIL_PORT = '2525'
